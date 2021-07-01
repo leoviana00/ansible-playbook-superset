@@ -8,4 +8,7 @@ site.retry
 # Editor
 .vscode
 
+# vagrant
+./vagrant/db-superset/.vagrant
+*.vagrant
 **/.vagrant
