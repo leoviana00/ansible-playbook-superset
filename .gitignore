@@ -4,10 +4,8 @@ site.retry
 **/.retry
 **/pulse-infra.*
 site.retry
-
 # Editor
 .vscode
-
 # vagrant
 ./vagrant/db-superset/.vagrant
 *.vagrant
