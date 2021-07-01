@@ -1,0 +1,35 @@
+---
+- name: Configurar máquinas
+  hosts: all
+  user: root
+  tags: 
+    - setup
+  roles:
+    - configure_hosts
+
+- name: Instalar Superset
+  hosts: superset
+  remote_user: vagrant
+  become: True
+  tags: 
+    - superset
+  roles:
+    - role: configure_superset
+
+- name: Instalar o redis
+  hosts: cache
+  remote_user: vagrant
+  become: True
+  tags: 
+    - redis
+  roles:
+    - role: configure_redis
+
+- name: Instalar o Postgres
+  hosts: db
+  remote_user: vagrant
+  become: True
+  tags: 
+    - pgsql
+  roles:
+    - role: configure_postgres

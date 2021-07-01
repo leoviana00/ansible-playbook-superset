@@ -1,0 +1,28 @@
+- name: Criar diretório dos arquivos Redis
+  file:
+    dest: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - /home/{{ user }}/data-redis/
+
+- name: Copiar arquivo de configuracao Redis
+  copy:
+    src: files/
+    dest: /home/{{ user }}/data-redis
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Rodar Redis Container
+  docker_container:
+    name: superset_cache
+    image: redis:latest
+    env_file: /home/{{ user }}/data-redis/env/{{ ambiente }}.env
+    restart: yes
+    recreate: yes
+    state: started
+    restart_policy: always
+    volumes:
+    - /home/{{ user }}/data-redis/redis:/data
+    ports:
+    - 6379:6379
