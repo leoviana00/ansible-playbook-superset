@@ -1,0 +1,38 @@
+---
+- name: Criar diretório dos arquivos
+  file:
+    dest: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - /home/{{ user }}/superset/
+
+- name: Copiar arquivos 
+  copy:
+     src: files/env
+     dest: /home/{{ user }}/superset
+     owner: "{{ user }}"
+     group: "{{ user }}"
+     mode: 0755
+     
+- name: Rodar Superset Container
+  docker_container:
+    env_file: /home/{{ user }}/superset/env/{{ ambiente }}.env      
+    name: superset_app
+    image: "{{ image }}"
+    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    restart: yes
+    recreate: yes
+    state: started
+    restart_policy: always
+    user: "root"
+    volumes:
+    - /home/{{ user }}/superset/docker:/app/docker
+    - /home/{{ user }}/superset/superset_home:/app/superset_home
+    ports:
+    - 80:8088
+
+# Chamando a task superset_init
+- include_tasks: roles/configure_superset/tasks/superset_init.yml
+- include_tasks: roles/configure_superset/tasks/superset_worker.yml
+- include_tasks: roles/configure_superset/tasks/superset_worker_beat.yml

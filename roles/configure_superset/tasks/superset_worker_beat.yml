@@ -1,0 +1,15 @@
+---
+- name: Rodar Superset Worker Beat Container
+  docker_container:
+    env_file: /home/{{ user }}/superset/env/{{ ambiente }}.env
+    name: superset_worker_beat
+    image: "{{ image }}"
+    command: ["/app/docker/docker-bootstrap.sh", "beat"]
+    user: "root"
+    restart: yes
+    recreate: yes
+    state: started
+    restart_policy: always
+    volumes:
+    - /home/{{ user }}/superset/docker:/app/docker
+    - /home/{{ user }}/superset/superset_home:/app/superset_home
