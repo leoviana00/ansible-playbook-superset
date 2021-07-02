@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-arquitetura">Arquitetura</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#%EF%B8%8F-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-execução">Execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -23,6 +24,12 @@
 ## 🌱 Projeto
 
 - Playbook para subir um superset na versão: `1.1`
+
+## 🖋 Arquitetura
+
+<p align="center">
+  <img alt="Arquitetura" src="images/superset-arquitetura.png">
+</p>
 
 ## ✨ Tecnologias
 
@@ -39,7 +46,6 @@
 <p align="center">
   <img alt="VM's" src="images/vms-stack-superset.png">
 </p>
-
 
 ## 🚀 Execução
 
