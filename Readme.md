@@ -25,12 +25,6 @@
 
 - Playbook para subir um superset na versão: `1.1`
 
-## 🖋 Arquitetura
-
-<p align="center">
-  <img alt="Arquitetura" src="images/superset-arquitetura.png">
-</p>
-
 ## ✨ Tecnologias
 
 - [Superset](https://github.com/apache/superset/tree/1.1)
@@ -38,6 +32,12 @@
 - [Virtualbox](https://www.virtualbox.org/)
 - [Docker](https://www.docker.com/)
 - [Ansible](https://docs.ansible.com/ansible/latest/index.html)
+
+## 🖋 Arquitetura
+
+<p align="center">
+  <img alt="Arquitetura" src="images/superset-arquitetura.png">
+</p>
 
 ## 🛠️ Ambiente 
 
