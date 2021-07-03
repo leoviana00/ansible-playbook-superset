@@ -3,7 +3,7 @@
   docker_container:
     env_file: /home/{{ user }}/superset/env/{{ ambiente }}.env
     name: superset_worker_beat
-    image: "{{ image }}"
+    image: "{{ image }}:{{ version }}"
     command: ["/app/docker/docker-bootstrap.sh", "beat"]
     user: "root"
     restart: yes

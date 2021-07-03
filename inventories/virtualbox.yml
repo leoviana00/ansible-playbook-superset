@@ -3,7 +3,9 @@ all:
   vars:
     ambiente: virtualbox
     user: vagrant
-    image: apache/superset:1.1.0
+    image: apache/superset
+    version: 1.2.0
+    # version: 1.1.0
 
   hosts:
     postgres-superset:
