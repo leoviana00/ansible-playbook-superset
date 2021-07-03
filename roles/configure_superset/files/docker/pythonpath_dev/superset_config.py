@@ -23,6 +23,11 @@
 import logging
 import os
 from datetime import timedelta
+from datetime import date
+from typing import Any, Callable, Dict
+
+from dateutil import relativedelta
+
 
 from cachelib.file import FileSystemCache
 from celery.schedules import crontab
@@ -90,7 +95,12 @@ class CeleryConfig(object):
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True}
+FEATURE_FLAGS = {
+    "ALERT_REPORTS": True,
+    "ENABLE_TEMPLATE_PROCESSING": True,
+    "DASHBOARD_NATIVE_FILTERS": True,
+    }
+
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = "http://superset:8088/"
 # The base URL for the email report hyperlinks.
@@ -111,3 +121,9 @@ try:
     )
 except ImportError:
     logger.info("Using default Docker config...")
+    
+JINJA_CONTEXT_ADDONS: Dict[str, Callable[..., Any]] = {
+    "current_month_start" : lambda: date.today() - relativedelta(day=1),
+    "current_month_end": lambda: date.today() - relativedelta(day=31)
+}
+
