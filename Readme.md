@@ -1,7 +1,7 @@
 <h1 align="center">Superset</h1>
 
 <p align="center">
-  <img alt="Superset" src="https://img.shields.io/static/v1?label=Superset&message=1.1&color=8257E5&labelColor=000000"  />
+  <img alt="Superset" src="https://img.shields.io/static/v1?label=Superset&message=1.2&color=8257E5&labelColor=000000"  />
 
   <img alt="Ansible" src="https://img.shields.io/static/v1?label=Ansible&message=Playbook&color=49AA26&labelColor=000000">
 
@@ -10,7 +10,6 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-arquitetura">Arquitetura</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#%EF%B8%8F-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-execução">Execução</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -23,7 +22,7 @@
 
 ## 🌱 Projeto
 
-- Playbook para subir um superset na versão: `1.1`
+- Playbook para subir um superset na versão: `1.2`
 
 ## ✨ Tecnologias
 
@@ -32,12 +31,6 @@
 - [Virtualbox](https://www.virtualbox.org/)
 - [Docker](https://www.docker.com/)
 - [Ansible](https://docs.ansible.com/ansible/latest/index.html)
-
-## 🖋 Arquitetura
-
-<p align="center">
-  <img alt="Arquitetura" src="images/superset-arquitetura.png">
-</p>
 
 ## 🛠️ Ambiente 
 
@@ -76,5 +69,5 @@ $ ansible-playbook -i inventories/virtualbox.yml site.yml --tags setup,pgsql,red
 
 ## 🙇 Referências
 
-- [Superset](https://github.com/apache/superset/tree/1.1)
-- [Superset Image](https://hub.docker.com/layers/apache/superset/1.1.0/images/sha256-08c4b03467bc2b9e23c232b870afc7048922de127bd30af2e8b5be277d686710?context=explore)
+- [Superset](https://github.com/apache/superset/tree/1.2/docker)
+- [Superset Image](https://hub.docker.com/layers/apache/superset/1.2.0/images/sha256-853561074b0ba40e78fb1d56d6daeea9d502198eda264507cb810f3de3c4f2b9?context=explore)
