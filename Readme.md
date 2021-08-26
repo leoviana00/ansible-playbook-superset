@@ -1,5 +1,4 @@
 <h1 align="center">Superset</h1>
-
 <p align="center">
   <img alt="Superset" src="https://img.shields.io/static/v1?label=Superset&message=1.1&color=8257E5&labelColor=000000"  />
 
